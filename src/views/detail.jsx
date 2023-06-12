@@ -63,9 +63,11 @@ function Detail(props) {
                     <Row>
                       <Col md={4} className="d-flex align-self-center text-md-left justify-content-center justify-content-md-start">
                         {/* Tombol Surah Sebelumnya */}
-                        <Link to={`/detail/${surah.suratSebelumnya["nomor"]}`} className="btn btn-sm btn-dark text-decoration-none text-light">
-                          <IconArrowBigLeftFilled className="mx-auto" /> Surah Sebelumnya
-                        </Link>
+                        {surah.suratSebelumnya && (
+                          <Link to={`/detail/${surah.suratSebelumnya["nomor"]}`} className="btn btn-sm btn-dark text-decoration-none text-light">
+                            <IconArrowBigLeftFilled className="mx-auto" /> Surah Sebelumnya
+                          </Link>
+                        )}
                       </Col>
                       <Col md={4} className="d-flex my-2 align-self-center justify-content-center">
                         {/* Pemutar Audio */}
@@ -73,9 +75,11 @@ function Detail(props) {
                       </Col>
                       <Col md={4} className="d-flex align-self-center text-md-right justify-content-center justify-content-md-end">
                         {/* Tombol Surah Selanjutnya */}
-                        <Link to={`/detail/${surah.suratSelanjutnya["nomor"]}`} className="btn btn-sm btn-dark text-decoration-none text-light">
-                          Surah Selanjutnya <IconArrowBigRightFilled className="mx-auto" />
-                        </Link>
+                        {surah.suratSelanjutnya && (
+                          <Link to={`/detail/${surah.suratSelanjutnya["nomor"]}`} className="btn btn-sm btn-dark text-decoration-none text-light">
+                            Surah Selanjutnya <IconArrowBigRightFilled className="mx-auto" />
+                          </Link>
+                        )}
                       </Col>
                     </Row>
                   </Card.Footer>
@@ -93,7 +97,6 @@ function Detail(props) {
                   </Card.Body>
                 </Card>
               </Col>
-              // Menampilkan daftar ayat jika data tersedia
               {surah.ayat.map((ayat) => (
                 <Col md={12} className="mb-4" key={ayat.nomorAyat}>
                   <Card className="border-0 rounded-3 shadow-sm" style={{ backgroundColor: "#F9F7F5" }}>
