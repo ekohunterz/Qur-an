@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Row, Card, Col, Form } from "react-bootstrap";
+import { Container, Row, Card, Col, Form, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "./footer";
 
@@ -8,14 +8,17 @@ export default function PostIndex() {
   const [surah, setSurah] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get("https://equran.id/api/v2/surat");
         setSurah(response.data.data);
+        setIsLoading(false);
       } catch (error) {
         console.log("Error:", error);
+        setIsLoading(false);
       }
     }
 
@@ -43,7 +46,14 @@ export default function PostIndex() {
             <Form.Control type="text" className="form-control-lg shadow-sm" placeholder="Cari surah..." value={searchText} onChange={handleSearchChange} />
           </div>
 
-          {searchResults.length > 0 ? (
+          {isLoading ? (
+            // Menampilkan indikator loading saat data sedang dimuat
+            <Col md={12} className="text-center mt-5 vh-100">
+              <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>
+            </Col>
+          ) : searchResults.length > 0 ? (
             searchResults.map((item) => (
               <Col md={4} className="mb-3 mt-3" key={item.nomor}>
                 <Link to={`/detail/${item.nomor}`} className="text-dark text-decoration-none">

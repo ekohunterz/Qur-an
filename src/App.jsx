@@ -11,11 +11,14 @@ export default function App() {
       <Navbar collapseOnSelect expand="lg" variant="light" style={{ background: "#E4DACE" }}>
         <Container>
           <Link to="/" className="text-decoration-none navbar-brand">
-            HOME
+            <img src="/logo.png" width={30} />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
+              <Link to="/" className="text-decoration-none text-dark nav-link">
+                Home
+              </Link>
               <Link to="/surah" className="text-decoration-none text-dark nav-link">
                 Baca Quran
               </Link>

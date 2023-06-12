@@ -14,6 +14,9 @@ export default function Home() {
             <Link to="/surah" className="btn btn-lg btn-secondary">
               Baca Quran
             </Link>
+            <Link to="/jadwal-sholat" className="btn btn-lg btn-secondary">
+              Jadwal Shalat
+            </Link>
           </div>
         </div>
       </div>

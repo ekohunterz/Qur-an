@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="py-3 bottom-0 mt-5 " style={{ backgroundColor: "#E4DACE" }}>
+    <footer className="p-3 bottom-0 mt-5 " style={{ backgroundColor: "#E4DACE" }}>
       <p className="text-center text-muted ">
         &copy; 2023 Eko Teguh Muhammadi |{" "}
         <a className="text-decoration-none" href="https://equran.id/apidev">
