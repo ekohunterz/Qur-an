@@ -19,9 +19,9 @@ export default function App() {
               <Link to="/surah" className="text-decoration-none text-dark nav-link">
                 Baca Quran
               </Link>
-              {/* <Link to="/surah" className="text-decoration-none text-dark nav-link">
+              <Link to="/jadwal-sholat" className="text-decoration-none text-dark nav-link">
                 Jadwal Shalat
-              </Link> */}
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

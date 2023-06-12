@@ -8,6 +8,7 @@ import Home from "../views/home.jsx";
 import PostIndex from "../views/index.jsx";
 
 import Detail from "../views/detail.jsx";
+import JadwalSholat from "../views/jadwal-sholat.jsx";
 
 function RoutesIndex() {
   return (
@@ -18,6 +19,7 @@ function RoutesIndex() {
       {/* route "/surah" */}
       <Route path="/surah" element={<PostIndex />} />
       <Route path="/detail/:nomor" element={<Detail />} />
+      <Route path="/jadwal-sholat" element={<JadwalSholat />} />
     </Routes>
   );
 }
